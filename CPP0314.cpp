@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-    set<string> s;
-    int t;
-    cin>>t;
+int main()
+{
+    int n;
+    cin >> n;
     cin.ignore();
-    while(t--){
-        string a;
-        getline(cin,a);
-        s.insert(a);
+    set<string> se;
+    for (int i = 0; i < n; i++)
+    {
+        string s;
+        getline(cin, s);
+        se.insert(s);
     }
-    cout<<s.size();
+    cout << se.size();
 }
