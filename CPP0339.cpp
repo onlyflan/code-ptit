@@ -1,10 +1,10 @@
-// Đếm xâu con có kí tự đầu và cuối giống nhau
-
 #include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
     int t;
     cin >> t;
     cin.ignore();
@@ -12,16 +12,26 @@ int main()
     {
         string s;
         getline(cin, s);
-        map<char, int> mp;
-        for (char x : s)
+        string tmp;
+        stringstream ss(s);
+        int odd = 0, even = 0, num = 0, cnt = 0;
+        while (ss >> tmp)
         {
-            mp[x]++;
+            for (int i = 0; i < tmp.size(); i++)
+            {
+                num = num * 10 + tmp[i] - '0';
+            }
+            if (num % 2 == 0)
+            {
+                even++;
+            }
+            else
+                odd++;
+            cnt++;
         }
-        int res = s.size();
-        for (auto x : mp)
-        {
-            res += x.second * (x.second - 1) / 2;
-        }
-        cout << res << endl;
+        if (cnt % 2 == 0 && even > odd || cnt % 2 == 1 && even < odd)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
     }
 }
