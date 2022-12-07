@@ -51,7 +51,7 @@ void inds(NhanVien a[], int n)
     for (int i = 0; i < n; i++)
     {
         cout << a[i].mnv << " " << a[i].ten << " " << a[i].gt << " ";
-        cout << a[i].d << "/" << a[i].m << "/" << a[i].y << " ";
+        cout << a[i].m << "/" << a[i].d << "/" << a[i].y << " ";
         cout << a[i].dc << " " << a[i].mst << " " << a[i].nkhd << endl;
     }
 }
@@ -68,8 +68,6 @@ void sapxep(NhanVien a[], int n)
 
 int main()
 {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
     struct NhanVien ds[50];
     int N, i;
     cin >> N;

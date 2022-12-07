@@ -2,7 +2,7 @@
 using namespace std;
 using ll = long long;
 
-ll hypontenuse(ll x, ll y)
+ll hypotenuse(ll x, ll y)
 {
     ll z = x * x + y * y;
     ll k = sqrt(z);
@@ -30,7 +30,7 @@ int main()
         {
             for (int j = i + 1; j < n - 1; j++)
             {
-                ll x = hypontenuse(a[j], a[i]);
+                ll x = hypotenuse(a[j], a[i]);
                 if (x && binary_search(a + j + 1, a + n, x))
                 {
                     check = 1;

@@ -2,35 +2,22 @@
 using namespace std;
 int main()
 {
-    int t;
+    int t, i;
     cin >> t;
     while (t--)
     {
         int n;
         cin >> n;
-        int a[n], b[n];
-        for (int i = 0; i < n; i++)
+        int a[n];
+        for (i = 0; i < n; i++)
         {
             cin >> a[i];
-            b[i] = a[i];
         }
-        for (int i = 0; i < n; i++)
+        cout << a[0] * a[1] << " ";
+        for (i = 1; i < n - 1; i++)
         {
-            if (i == 0)
-            {
-                a[i] *= b[i + 1];
-            }
-            else if (i == n - 1)
-            {
-                a[i] *= b[i - 1];
-            }
-            else
-                a[i] = b[i - 1] * b[i + 1];
+            cout << a[i - 1] * a[i + 1] << " ";
         }
-        for (int i = 0; i < n; i++)
-        {
-            cout << a[i] << " ";
-        }
-        cout << endl;
-    }   
+        cout << a[n - 1] * a[n - 2] << endl;
+    }
 }
